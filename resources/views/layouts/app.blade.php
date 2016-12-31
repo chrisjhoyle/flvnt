@@ -84,6 +84,8 @@
         <script src="js/jquery-2.1.1.min.js"></script>
 		<!--modernizr.js-->
         <script src="js/modernizr.js"></script>
+        <!--jquery.isotope.js -->
+        <script src="js/isotope.pkgd.min.js" type="text/javascript"></script>
 		<!--jquery.waypoints.js-->
         <script src="js/jquery.waypoints.js"></script>
         <!-- bootstrap.js -->
@@ -96,5 +98,6 @@
         <script type="text/javascript" src="less/less.js"></script>
         <!-- custom.js -->
 		<script type="text/javascript" src="js/custom.js"></script>
+
     </body>
 </html>
