@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/vagrant/flvnt":{"type":null,"mount_options":[],"guestpath":"/home/vagrant/flvnt","hostpath":"/Users/andreasbeasley/sites/flvnt","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/andreasbeasley/sites/flvnt","disabled":false,"__vagrantfile":true}}}

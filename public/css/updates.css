@@ -1,0 +1,15 @@
+/*
+* Title:   Updates Style File
+* Author:  1stone
+*/
+
+/* FOR DESKTOP VIEW */
+
+/* FOR TAB VIEW */
+@media all and (min-width:768px) and (max-width:991px) {
+
+}
+/* FOR MOBILE VIEW */
+@media all and (min-width:0px) and (max-width:767px) {
+
+}

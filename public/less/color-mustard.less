@@ -1,0 +1,124 @@
+/* VARIABLES */
+@firstC: #f5be58;
+input, textarea, select {
+	&:focus {
+		border-color: @firstC;
+	}
+}
+#color-mustard {
+	/* BUTTON STYLING */
+	.btn {
+		background-color: @firstC;
+		&:hover {
+			background-color: #d2a248;
+		}
+	}
+	/* END OF BUTTON STYLING */
+	.banner {
+		&.header-banner {
+			background-image: url('http://placehold.it/1920x700');
+		}
+		&.benefits-bg {
+			background-image: url('http://placehold.it/1920x880');
+		}
+	}
+	/* HEADER FORM */
+	.form-wrapper {
+		.btn {
+			border-color: #d2a248;
+		}
+	}
+	/* END OF HEADER FORM */
+
+	/* SECTION LISTING */
+	.section-listing {
+		.property-features {
+			ul {
+				li {
+					background-color: #f8cc7b;
+					&:hover {
+						background-color: #e9a72d;
+					}
+					&:nth-child(2n) {
+						background-color: #f5be58;
+						&:hover {
+							background-color: #e9a72d;
+						}
+					}
+				}
+			}
+		}
+	}
+	/* END OF SECTION LISTING */
+
+	/* SECTION BENEFITS */
+	.section-benefits {
+		.benefit-outter {
+			.small-circle {
+				border-color: @firstC;
+			}
+			.big-circle {
+				border-color: @firstC;	
+			}
+			p {
+				color: @firstC;
+			}
+			&:hover {
+		    	.small-circle {
+		    		background-color: @firstC;
+		    	}
+		    	.big-circle {
+		    		background-color: @firstC;
+		    	}
+		    }
+		}
+	}
+	/* END OF SECTION BENEFITS */
+
+	/* SECTION STRUCTURE */
+	.section-structure {
+		.structure-content {
+			.structure-icon {
+				border-color: @firstC;
+				&.icon-01 {
+					background-image: url('../images/m-home-icon.png');
+				}
+				&.icon-02 {
+					background-image: url('../images/m-bariar-icon.png');
+				}
+				&.icon-03 {
+					background-image: url('../images/m-money-icon.png');
+				}				
+			}
+		}
+		.structure-content {
+			&:hover {
+				.structure-icon {
+					background-color: @firstC;
+					&.icon-01 {
+						background-image: url('../images/home-icon-w.png');
+					}
+					&.icon-02 {
+						background-image: url('../images/bariar-icon-w.png');
+					}
+					&.icon-03 {
+						background-image: url('../images/money-icon-w.png');
+					}
+				}
+			}
+		}
+	}
+	/* END OF  SECTION STRUCTURE */
+
+	/* SECTION TESTOMONIAL */
+	.section-testimonial {
+		.testimonial-content-outter {
+			.testimonial-name {
+				h4 {
+					color: @firstC
+				}
+			}
+		}
+	}
+	/* END OF SECTION TESTOMONIAL */
+}
