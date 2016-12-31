@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-xs-12">
                 <div class="section-heading">
-                    <h2>FLVNT INFLUENCERS hello</h2>
+                    <h2>FLVNT INFLUENCERS</h2>
                 </div>
             </div>
         </div>
