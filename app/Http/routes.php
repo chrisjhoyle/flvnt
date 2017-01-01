@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
-
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/', 'HomeController@index');
+
+Route::get('/users/acticate/{usersid}', 'HomeController@activateUser');

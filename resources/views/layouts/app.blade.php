@@ -35,6 +35,20 @@
         </div>
         <!-- END OF LOADER -->
 
+        @if($errors->has('email'))
+            <div class="alert alert-info" style="margin-bottom:0px;">
+                {{$errors->first('email')}}
+            </div>
+        @elseif($errors->has('password'))
+            <div class="alert alert-info" style="margin-bottom:0px;">
+                {{$errors->first('password')}}
+            </div>
+        @elseif(isset($info))
+            <div class="alert alert-info" style="margin-bottom:0px;">
+                {{$info}}
+            </div>
+        @endif
+
         @yield('content')
 
         <!-- FOOTER -->
@@ -42,7 +56,19 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12">
-						<div class="copy">© Copyright . All Rights Reserved.</div>
+						<div class="copy">
+                            &copy; Copyright . All Rights Reserved.
+
+                             @if(\Auth::check() && \Auth::user()->is_admin)
+                                 <a data-toggle="modal" data-target="#activationsModal">
+                                     Pending Activations
+                                 </a>
+                             @endif
+
+                             <a href="/logout">
+                                 Logout
+                             </a>
+                        </div>
 						<div class="socail">
 							<ul>
 								<li><a href="#" class="facebook"></a></li>
@@ -72,13 +98,64 @@
                     </div>
                     <div class="modal-body">
                         <div class="bootstrap-dialog-body">
-                             <div class="bootstrap-dialog-message">Your request has been recieved.</div>
+                             <div class="bootstrap-dialog-message">
+                                 Your request has been recieved.
+                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- END OF SUCCESS MODAL -->
+
+        @if(\Auth::check() && \Auth::user()->is_admin)
+            <!-- PENDING ACTIVATIONS MODAL -->
+        	<div class="modal fade" id="activationsModal" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="bootstrap-dialog-header">
+                                <div class="bootstrap-dialog-close-button" data-dismiss="modal" aria-label="Close">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                </div>
+                                <div class="bootstrap-dialog-title">Pending Activations</div>
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <div class="bootstrap-dialog-body">
+                                 <div class="bootstrap-dialog-message">
+                                     <table class="table table-hover">
+                                         <thead>
+                                             <tr>
+                                                 <th>#</th>
+                                                 <th>Name</th>
+                                                 <th>Email</th>
+                                                 <th>Action</th>
+                                             </tr>
+                                         </thead>
+                                         <tbody>
+                                             @foreach($usersNotActivated as $userNotActivated)
+                                                 <tr>
+                                                     <th scope="row">{{$userNotActivated->id}}</th>
+                                                     <td>{{$userNotActivated->name}}</td>
+                                                     <td>{{$userNotActivated->email}}</td>
+                                                     <td><a href="users/acticate/{{$userNotActivated->id}}">Activate</a></td>
+                                                 </tr>
+                                             @endforeach
+                                         </tbody>
+                                    </table>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- PENDING ACTIVATIONS MODAL -->
+        @endif
+
+
+
 
         <!-- jquery-2.1.1.min.js -->
         <script src="js/jquery-2.1.1.min.js"></script>
