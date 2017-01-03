@@ -76,9 +76,6 @@
 			<div class="col-xs-12">
 				<div class="section-heading">
 					<h2>FLVNT FEATURED</h2>
-
-
-
 				</div>
 			</div>
 		</div>

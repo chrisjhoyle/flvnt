@@ -83,30 +83,57 @@
 		</footer>
 		<!-- END OF FOOTER -->
 
-        <!-- SUCCESS MODAL -->
-    	<div class="modal fade" id="successModal" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <div class="bootstrap-dialog-header">
-                            <div class="bootstrap-dialog-close-button" data-dismiss="modal" aria-label="Close">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <!-- jquery-2.1.1.min.js -->
+        <script src="js/jquery-2.1.1.min.js"></script>
+		<!--modernizr.js-->
+        <script src="js/modernizr.js"></script>
+        <!--jquery.isotope.js -->
+        <script src="js/isotope.pkgd.min.js" type="text/javascript"></script>
+		<!--jquery.waypoints.js-->
+        <script src="js/jquery.waypoints.js"></script>
+        <!-- bootstrap.js -->
+        <script src="bootstrap/js/bootstrap.js"></script>
+		<!-- Jquery.simplr.jquery.validate.js -->
+		<script type="text/javascript" src="js/jquery.validate.js"></script>
+		<!-- Jquery.simplr.jquery-validate.bootstrap-tooltip.js -->
+		<script type="text/javascript" src="js/jquery-validate.bootstrap-tooltip.js"></script>
+		<!-- Less.js -->
+        <script type="text/javascript" src="less/less.js"></script>
+        <!-- custom.js -->
+		<script type="text/javascript" src="js/custom.js"></script>
+
+        @if(isset($modal))
+            <!-- SUCCESS MODAL -->
+        	<div class="modal fade" id="successModal" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="bootstrap-dialog-header">
+                                <div class="bootstrap-dialog-close-button" data-dismiss="modal" aria-label="Close">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                </div>
+                                <div class="bootstrap-dialog-title">Success!</div>
                             </div>
-                            <div class="bootstrap-dialog-title">Success!</div>
                         </div>
-                    </div>
-                    <div class="modal-body">
-                        <div class="bootstrap-dialog-body">
-                             <div class="bootstrap-dialog-message">
-                                 Your request has been recieved.
-                             </div>
+                        <div class="modal-body">
+                            <div class="bootstrap-dialog-body">
+                                 <div class="bootstrap-dialog-message">
+                                     {{$modal['info']}}
+                                 </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- END OF SUCCESS MODAL -->
+            <!-- END OF SUCCESS MODAL -->
+
+        	<script>
+        		$('#successModal').modal({
+        			show: true
+        		});
+        	</script>
+        @endif
 
         @if(\Auth::check() && \Auth::user()->is_admin)
             <!-- PENDING ACTIVATIONS MODAL -->
@@ -153,28 +180,6 @@
             </div>
             <!-- PENDING ACTIVATIONS MODAL -->
         @endif
-
-
-
-
-        <!-- jquery-2.1.1.min.js -->
-        <script src="js/jquery-2.1.1.min.js"></script>
-		<!--modernizr.js-->
-        <script src="js/modernizr.js"></script>
-        <!--jquery.isotope.js -->
-        <script src="js/isotope.pkgd.min.js" type="text/javascript"></script>
-		<!--jquery.waypoints.js-->
-        <script src="js/jquery.waypoints.js"></script>
-        <!-- bootstrap.js -->
-        <script src="bootstrap/js/bootstrap.js"></script>
-		<!-- Jquery.simplr.jquery.validate.js -->
-		<script type="text/javascript" src="js/jquery.validate.js"></script>
-		<!-- Jquery.simplr.jquery-validate.bootstrap-tooltip.js -->
-		<script type="text/javascript" src="js/jquery-validate.bootstrap-tooltip.js"></script>
-		<!-- Less.js -->
-        <script type="text/javascript" src="less/less.js"></script>
-        <!-- custom.js -->
-		<script type="text/javascript" src="js/custom.js"></script>
 
     </body>
 </html>

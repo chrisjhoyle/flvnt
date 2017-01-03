@@ -9,9 +9,6 @@ class HomeController extends Controller
 {
     public function __construct()
     {
-        // Middleware will send it back to
-        // the login page. The if statement
-        // in index will handle where to go
         $this->middleware('auth');
     }
 
@@ -37,6 +34,8 @@ class HomeController extends Controller
                     $user->activation_email_sent = 1;
 
                     $user->save();
+
+                    return view('index')->with('modal', ['info' => 'Thank you for registering. You will recive an email once your account is active']);
                 }
 
                 \Auth::logout();

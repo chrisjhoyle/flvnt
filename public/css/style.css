@@ -216,7 +216,8 @@ header {
 .header-txt .header-txt-inner {
     display: table-cell;
     vertical-align: middle;
-    height: 648px
+    height: 648px;
+    color:#fff;
 }
 .header-txt-inner {
     padding-bottom: 25px;
